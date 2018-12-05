@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mobile application</title>
+	<meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+  <script src="cordova.js"></script>
+  <link href="build/main.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="jquery.min.js"></script>	
+	<script type="text/javascript" src="growl.js"></script>
+	<script type="text/javascript" src="jqm.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="jqm.css">
+	<script src="bootstrap.min.js"></script>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<style>
+            .carousel-inner > .item > img,
+            .carousel-inner > .item > a > img {
+                width: 70%;
+                margin: auto;
+            }
+           .ui-page-theme-a{
+                background: url(mainmenu.jpg);
+                background-repeat:repeat-y;
+                background-position:center center;
+                background-attachment:center;
+                background-size:200% 100%; 
+                background-size:cover;
+                background-attachment:fixed; 
+            }
+            
+            .ui-btn-left{
+                left: .0em;
+                position: absolute;
+                top: .0em;
+            }
+            
+            .ui-btn-right{
+                right: .0em;
+                position: absolute;
+                top: .0em;    
+            }
+            .ui-btn-z{
+                font-size: 21px;
+                margin: .9em 0;
+                padding: .19em 1em;
+                line-height: 3;
+                font-family: cursive;
+                /*background-color: rgba(0, 0, 0, 0.44);*/
+                border-color: #1f1f1f;
+                color: #fff;
+                text-shadow: 0 1px 0 #111;
+                box-shadow: 0 0 20px 7px black;
+                color: #65aed3;
+            }
+            .ui-slider-label-a{
+                width: 100%;
+                color: rgb(0, 251, 10);
+                box-shadow: black 0px 0px 20px 5px inset;
+
+            }
+            .ui-slider-label-b{
+                color: rgb(251, 0, 10);
+                box-shadow: black 0px 0px 20px 5px inset;
+            }
+            .ui-slider-track .ui-btn.ui-slider-handle {
+                font-size: .9em;
+                line-height: 30px;
+                background-color: #333;
+                box-shadow: 0 0 20px black;
+            }
+            .ui-header .ui-title, .ui-footer .ui-title {
+                font-size: 1.4em;
+                min-height: 1.1em;
+                text-align: center;
+                display: block;
+                margin: 0 30%;
+                padding: .7em 0;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                outline: 0!important;
+                box-shadow: 0 0 17px 8px black;
+                color: #38c;
+                font-weight: 700;
+            }
+            html head+body .ui-btn.ui-btn-z{
+                background-color: rgba(0, 0, 0, 0.44);
+                border-color: #1f1f1f;
+                color: #fff;
+                text-shadow: 0 1px 0 #111;
+            }
+            .ui-input-text input{
+                color: #f5f5f5;
+                box-shadow: 0 0 black;
+                text-shadow: 0 0 0px black;
+                /*min-height: 3.1em;*/
+                font-family: cursive;
+    			font-size: 19px;
+            }
+            header .ui-btn-right  {
+                font-size: 10.5px;
+            }
+            textarea.ui-input-text{
+    			border: none;
+    			width: 100%;
+    			outline: 0;
+    			background-color: rgba(248, 246, 250, 0.09);
+			}
+			textarea.style{
+    			height: 400px;
+
+			}
+        </style>
+  
+
+
+</head>
+    <body background="annd.png" class="ui-mobile-viewport ui-overlay-ui-page-theme-a">
+<div data-theme="b" data-role="panel" class="ui-panel-display-push" id="panel">
+<!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
+
+  <!-- The vendor js is generated during the build process
+      and contains all code in `node_modules` -->
+  <script src="build/vendor.js"></script>
+
+  <!-- The bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+		<!-- <br><br><br><br><br><br>
+		<br><br><br><br><br><br>
+		<br><br><br><br><br><br> -->
+		<img src="ab.jpg" style="width:208px;height:230px;">
+		<a class="ui-btn"  href="#account"> ACCOUNT </a>
+		<a class="ui-btn" href="#contact"> CONTACTS</a>
+		<a class="ui-btn" href="#Setting"> SETTINGS</a>
+		
+	</div>
+
+	<script type="text/javascript" id=="panel">
+		$(function() {
+			$('#panel').panel();
+		});
+	</script>
+
+
+
+<div data-theme="ui-theme-a" data-role="page" id="mainPage">
+	<div data-role="header">
+		<h1 align="left">LOGIN</h1>
+	</div>
+	<div role="main" class="ui-content">
+		<input type="text" placeholder="USERNAME" id="a"><br>
+		<input type="password" placeholder="PASSWORD" id="b"><br>
+		<a class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-z" data-transition="slide" id="click" >login</a>
+		<br><br>
+		<div id="result"></div><br>
+		Don't have an account?<br>
+		<a class="ui-btn ui-btn-b ui-btn-z" href="#signup">Signup</a>
+		<br>
+
+
+<!-- ======================================================================================== -->
+
+
+
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <img src="a1.jpg" alt="Chania" width="460" height="300">
+        <div class="carousel-caption">
+          <h3>CONNECT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="a2.jpg" alt="Chania" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>CONTROL</h3>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="a3.jpg" alt="Flower" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>PERSONALIZE</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="a4.jpg" alt="Flower" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>ENJOY</h3>
+        </div>
+      </div>
+  
+    </div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- ================================================================================== -->
+
+
+
+	
+
+<div data-theme="ui-page-theme-a" data-role="page" id="secondPage" >
+	<div data-icon="bars" data-theme="b" data-role="header">
+		<a data-icon="bars" href="#panel" class="ui-btn-left">OPTIONS</a>
+	<h1 >Menu</h1>
+		<a href="#mainPage" data-icon="power" class="ui-btn-right">SIGN OUT</a>
+	</div>	
+    
+	<div  data-role="main" class="ui-content" data-fullscreen="true">	
+            <br><br><br>            
+            <br><br><br>
+            
+            
+           
+		<a class="ui-btn ui-btn-b ui-btn-z" href="#Tempreture"> TEMPERATURE</a>
+		<a class="ui-btn ui-btn-b ui-btn-z" href="#Led"> LED</a>
+		<a class="ui-btn ui-btn-b ui-btn-z" href="#connect"> CONNECT</a>
+		
+               
+	</div>
+     
+    <div data-role="footer" class="ui-content" data-position="fixed" data-fullscreen="true">
+                
+        </div>
+</div>
+
+
+<div data-theme="ui-page-theme-a" data-role="page" id="account">
+	<div data-theme="b" data-role="header">
+		<a data-icon="bars" href="#panel" class="ui-btn-left">OPTIONS</a>
+	<h1>Account</h1>
+		<a href="#mainPage" data-icon="power" class="ui-btn-right">SIGN OUT</a>
+	</div>
+	<div role="main" class="ui-content">
+            <br><br><br>            
+            <br><br><br>
+            <br><br><br>            
+            <br><br><br>
+		<a class="ui-btn ui-btn-b ui-btn-z" href="#secondPage"> Go to home page</a>
+	</div>
+</div>
+
+
+<div data-theme="ui-page-theme-a" data-role="page" id="contact">
+	<div data-theme="b" data-role="header">
+		<a data-icon="bars" href="#panel" class="ui-btn-left">OPTIONS</a>
+	<h1>CONTACT</h1>
+		<a href="#mainPage" data-icon="power" class="ui-btn-right">SIGN OUT</a>
+	</div>
+	<div role="main" class="ui-content">
+            <br><br><br>            
+            <br><br><br>
+            <br><br><br>            
+            <br><br><br>
+		<a class="ui-btn ui-btn-b ui-btn-z" href="#secondPage"> Go to home page</a>
+	</div>
+</div>
+
+
+
+
+<div data-theme="ui-page-theme-a" data-role="page" id="Setting">
+	<div data-theme="b" data-role="header">
+		<a data-icon="bars" href="#panel" class="ui-btn-left">OPTIONS</a>
+	<h1>SETTING</h1>
+		<a href="#mainPage" data-icon="power" class="ui-btn-right">SIGN OUT</a>
+	</div>
+	<div role="main" class="ui-content">
+            <br><br><br>            
+            <br><br><br>
+            <br><br><br>            
+            <br><br><br>
+		<a class="ui-btn ui-btn-b ui-btn-z" href="#secondPage"> Go to home page</a>
+	</div>
+</div>
+
+
+<div data-theme="ui-page-theme-a" data-role="page" id="connect">
+	<div data-theme="b" data-role="header">
+		<a data-icon="bars" href="#panel" class="ui-btn-left">OPTIONS</a>
+	<h1>CONNECT</h1>
+		<a href="#mainPage" data-icon="power" class="ui-btn-right">SIGNOUT</a>
+	</div>
+	<div role="main" class="ui-content">
+            <input type="text" id="ip" placeholder="Enter IP Address"><br>
+            <input type="password" id="add" placeholder="Enter port no"><br>
+                <a class="ui-btn ui-btn-b ui-btn-z" id="connectbtn" href="#chat" >connect</a><br>
+		
+                <br><br><br>            
+                <br><br><br>
+                <br><br><br>            
+                <br><br><br>
+                <a class="ui-btn ui-btn-b ui-btn-z" href="#secondPage"> Go to home page</a>
+	</div>
+</div>
+
+<div data-theme="ui-page-theme-a"   data-role="page" id="Led">
+	<div data-theme="b" data-role="header">
+		<a data-icon="bars" href="#panel" class="ui-btn-left">OPTIONS</a>
+	<h1>LED</h1>
+		<a href="#mainPage" data-icon="power" class="ui-btn-right">SIGN OUT</a>
+	</div>
+	<div role="main" class="ui-content">
+                <br> <br>               
+                <br> <br>
+                <br> <br>
+                <br> <br>
+                <br> <br>                
+                <br> <br>
+                <br> <br>
+                <div style="text-align:center">
+                <div class="container" align="centre">
+                <select  name="flip-1" id="flip-1" data-role="slider">
+			<option value="off">Off</option>
+			<option value="on">On</option>
+		</select>
+                </div>
+                </div>
+                <br> <br>
+                <br> <br>                
+                <br> <br>
+                <br> <br>
+              <a class="ui-btn ui-btn-b ui-btn-z" href="#secondPage"> Go to home page</a><br>
+
+	</div>
+    <div data-role="footer" class="ui-content" data-position="fixed" data-fullscreen="true">
+               
+        </div>
+</div>
+
+<div data-theme="ui-page-theme-a" data-role="page" id="Tempreture">
+	<div data-theme="b" data-role="header">
+		<a data-icon="bars" href="#panel" class="ui-btn-left" required>OPTIONS</a>
+	<h1>TEMPERATURE</h1>
+		<a href="#mainPage" data-icon="power" class="ui-btn-right" required>SIGNOUT</a>
+	</div>
+	<div role="main" class="ui-content">
+             <br>               
+                <br> <br> <br>               
+                <br> <br>
+                <br> <br>
+                <br> <br>
+                <br> <br>                
+                <br> <br>
+                <br> <br>
+                <br> <br>
+                <br> <br>
+                <br> <br>                
+                <br> <br>
+                <br> <br>
+		<a class="ui-btn ui-btn-b ui-btn-z" href="#secondPage"> Go to home page</a>
+	</div>
+</div>
+
+
+<div data-theme="ui-page-theme-a" data-role="page" id="signup">
+	<div data-theme="b" data-role="header">
+	<h1>SIG NUP</h1>
+	</div>
+	<div role="main" class="ui-content">
+            <input type="text" id="un" placeholder="username">
+            <input type="password" id="pw1" placeholder="password">
+            <input type="password" id="pw2" placeholder="re-password">
+            <a class="ui-btn ui-btn-b ui-btn-z" id="sign">SIGN UP</a><br>
+            Already have an account?<br>
+		<a class="ui-btn ui-btn-b ui-btn-z" href="#mainPage">LOG IN</a>
+	</div>
+</div>
+
+<div data-theme="ui-page-theme-a" data-role="page" id="chat">
+	<div data-theme="b" data-role="header">
+		<h1>SIGN UP</h1>	
+	</div>
+	<div role="main" class="ui-content">
+		
+			<textarea id="ta" class="ui" readonly rows="10" cols="50" style="min-height: 105px">
+				
+			</textarea>
+		
+			<input class="ui-corner-all" type="text" placeholder="Enter your message" id="msgt">
+			<a class="ui-btn" data-icon="arrow-d-r" id="msg">s</a>
+	</div>
+	
+</div>
+</body>
+</html>

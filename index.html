@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Script.js"></script>
+        <link href="css/mobiscroll.jquery.lite.min.css" rel="stylesheet">
+        <script src="js/mobiscroll.jquery.lite.min.js"></script>
+
+        <style type="text/css">
+            img {
+                height: 40;
+                vertical-align: middle;
+            }
+        	.jumbotron{
+        		margin-left: 5%;
+        		margin-right: 5%;
+        		padding-left: 5%;
+        		padding-right: 5%;
+        	}
+        	.you{
+        		margin-top: 1%;
+        		margin-left: 0%;
+        		margin-right: 40%;
+        		padding-left: 5%;
+        		padding-right: 5%;
+        		padding-bottom: 1%;
+        		padding-top: 2%;
+        		margin-bottom: 1%;
+        		text-align: left;
+        		color: white;
+        		background-color: rgba(0, 188, 212, 0.5);
+                word-wrap: break-word;
+				border-radius: 30px;
+        	}
+        	.reply{
+        		margin-top: 8%;
+        		margin-left: 40%;
+        		margin-right: 0%;
+        		padding-left: 5%;
+        		padding-right: 5%;
+        		padding-bottom: 1%;
+        		padding-top: 2%;
+        		text-align: left;
+        		color: white;
+        		background-color: rgba(232, 7, 168, 0.52);
+                word-wrap: break-word;
+				border-radius: 30px;
+        	}
+        	.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+       		
+    			text-shadow: 0 /*{a-page-shadow-x}*/ 1px /*{a-page-shadow-y}*/ 0 /*{a-page-shadow-radius}*/ #f3f3f3 /*{a-page-shadow-color}*/;
+    			background: url();
+    			background-attachment:center;
+                background-size:200% 100%; 
+                background-size:cover;
+                background-attachment:fixed; 
+			}
+			.ui-header{
+        		position: fixed;
+    			border-width: 1px 0;
+    			padding: 10px;
+    			text-align: center;
+    			font-family: inherit;
+    			font-size: 20px;
+    			margin-left: 0px
+			}
+			.ui-footer{
+				position: fixed;
+				background-color: #00bcd4;
+    			padding: 15px;
+			}
+			body, html {
+				height: 100%;
+				margin: 0;
+			}
+			
+        </style>
+        
+    </head>
+   <body>
+
+		<div data-role="page" class="ui-mobile-viewport" id="Login" class="bg">
+				<div data-role="header" align="center" style="position:initial; background-color: #00BCD4;color: white;font-weight: inherit;">
+				<br><br><br>
+					<label>Chat with us</label>
+				</div>
+		
+				<div data-role="main" img-src="" id="">
+                    <div mbsc-page>
+                    <div mbsc-form>
+					<div style="margin: 10%" class="mbsc-form-group">
+						<input  style="width: 60% " placeholder="Enter Your code" id="topic">
+						<input  style="width: 60% " placeholder="Enter partner code" id="targettopic">					
+						<a href="#chat" data-transition="flow" class="ui-btn ui-corner-all ui-shadow ui-btn" id="con">Connect</a>
+					</div>
+                    </div>							
+					</div>
+				</div>
+		
+				<div data-role="footer" data-position="fixed" style="background-color: #00BCD4;color: white">
+					
+					<div align="center">
+						
+					</div>
+		
+			   </div>
+			</div> 
+
+
+
+    <div data-role="page" class="ui-mobile-viewport bg" id="chat">
+        <div data-role="header" align="center" style="position:initial; background-color: #00BCD4;color: white;font-weight: inherit;">
+        <br><br><br>
+            <label>Chat with us</label>
+        </div>
+
+        <div data-role="main" img-src="" id="display">
+                <div id="box"></div>
+				<div id="bottom"></div>
+        </div>
+
+        <div data-role="footer" data-position="fixed" style="background-color: #00BCD4;color: white">
+            
+            <div align="center">
+                <div  class="row">
+                <input  style="width: 60%" id="msg" placeholder="press Enter to reply">
+            </div>
+            </div>
+
+       </div>
+    </div> 
+   </body>
+</html>
